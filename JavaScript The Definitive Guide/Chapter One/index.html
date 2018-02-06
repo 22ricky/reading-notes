@@ -13,6 +13,42 @@
   </style>
 </head>
 <body>
-  
+<!--
+  这是一个HTML表格，其中包含<input>元素可以用来输入数据。
+  程序将在<span>元素中显示计算结果，这些元素都具有类似"interest"和"years"的id
+  这些id将在表格下面的JavaScript代码中用到。我们注意到，有一些
+  input元素定义了"onchange"或"onclick"的事件处理程序，以便用户在输入数据或者点击inputs时
+  执行指定的JavaScript代码段
+-->
+<table>
+  <tr><th>Enter Loan Data:</th>
+      <td></td>
+      <th>Loan Banlance, Cumulative Equity, and Interest Payments</th></tr>
+  <tr><td>Amount of the loan ($):</td>
+      <td><input id="amount" onchange="calculate();" /></td>
+      <td rowspan=8>
+        <canvas id="graph" width="400" height="250"></canvas></td></tr>
+  <tr><td>Annual interest (%):</td>
+      <td><input id="apr" onchange="calculate();" /></td></tr>
+  <tr><td>Repayment period (years):</td>
+      <td><input id="years" onchange="calculate();" /></td></tr>
+  <tr><td>Zipcode (to find lenders):</td>
+      <td><input id="zipcode" onchange="calculate();" /></td></tr>
+  <tr><th>Approximate Payments:</th>
+      <td><button onclick="calculate();">Calculate</button></td></tr>
+  <tr><td>Monthly payment:</td>
+      <td>$<span class="output" id="payment"></span></td></tr>
+  <tr><td>Total payment:</td>
+      <td>$<span class="output" id="total"></span></td></tr>
+  <tr><td>Total interest:</td>
+      <td>$<span class="output" id="totalinterest"></span></td></tr>
+  <tr><th>Sponsors:</th><td colspan=2>
+      Apply for your loan with one of these fine lenders:
+      <div id=lenders""></div></td></tr>
+</table>
+
+<!-- 随后是JavaScript代码，这些代码内嵌在了一个<script>标签里 -->
+<!-- 通常情况下，这些脚本代码应当放在<head>标签中 -->
+<!-- 将JAvaScript代码放在HTML代码之后仅仅是为了便于理解 -->
 </body>
 </html>
